@@ -6,6 +6,12 @@ from sql_queries import *
 
 
 def process_song_file(cur, filepath):
+    """
+    Read JSON files for song data and insert data read into the table created
+    Parameters:
+        cur: Database connection cursor
+        filepath: Path to the song data
+    """
     # open song file
     df = pd.read_json(filepath,lines=True)
 
@@ -19,6 +25,12 @@ def process_song_file(cur, filepath):
 
 
 def process_log_file(cur, filepath):
+    """
+    Read JSON files for log data and insert logged data into dimension table created. And insert data into songplay fact table
+    Parameters:
+        cur: Database connection cursor
+        filepath: Path to the log data
+    """
     # open log file
     df = pd.read_json(filepath,lines=True)
 
